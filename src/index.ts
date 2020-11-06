@@ -9,7 +9,7 @@ import {
   redisConnection,
   schema,
 } from './infrastructure';
-import { SocketServer } from './infrastructure/socketServer';
+// import { SocketServer } from './infrastructure/socketServer';
 import { runAllJobs } from './infrastructure/container/jobs';
 import { ApolloGraphqlServer } from './infrastructure/apolloServer';
 
@@ -44,11 +44,11 @@ const initializationSequence = async () => {
   //   logger.info(`Sockets running on port: ${config.socketPort}`);
   // });
 
-  new ApolloGraphqlServer(expressServer.getApp(), expressServer.getServer(), schema).listen(
-    config.apolloPort,
-    () => {
-      logger.info(`Apollo server running on port: ${config.apolloPort}`);
-    },
-  );
+  // new ApolloGraphqlServer(expressServer.getApp(), expressServer.getServer(), schema).listen(
+  //   config.apolloPort,
+  //   () => {
+  //     logger.info(`Apollo server running on port: ${config.apolloPort}`);
+  //   },
+  // );
 };
 initializationSequence();
