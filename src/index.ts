@@ -30,6 +30,7 @@ const initializationSequence = async () => {
     router(controllers.express),
     // redisConnection.getSessionOptions(),
   );
+
   expressServer.listen(config.port, () => {
     // logger.info(`server running on port: ${config.port}`);
     console.log(`server running on port: ${config.port}`)
