@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "",
+    "sourceMap": true,
+    "removeComments": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": [
+    "./src/**/*.ts",
+  ],
+  "exclude": [
+    "./test/*.ts",
+    "./src/**/*.test.ts",
+    "node_modules",
+    "coverage",
+    "dist",
+    "export",
+    ".nyc_output"
+  ]
+}

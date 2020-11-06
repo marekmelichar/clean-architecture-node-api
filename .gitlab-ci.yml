@@ -1,0 +1,41 @@
+variables:
+  PROJECT_NAME: cockpit-api
+
+include:
+  - project: "thermofisher-cockpit/deployer"
+    ref: master
+    file: "/.ci-build-deploy.yml"
+
+############################
+###---  Test & others    ---
+############################
+
+lint:
+  extends: .node_lint
+
+test:
+  extends: .node_test
+  artifacts:
+    paths:
+      - coverage
+  script:
+    - yarn install
+    - mkdir config
+    - echo "$DOT_ENV_TESTS" > config/.env.test
+    - apt-get update && apt-get --force-yes --yes install mysql-client
+    - chmod +x ./test/db_create.sh && ./test/db_create.sh
+    - yarn run build
+    - yarn run migrate:tests
+    - yarn run test:cover
+  after_script:
+    - chmod +x ./test/db_remove.sh && ./test/db_remove.sh
+
+
+################################
+###--- DEPLOYMENT SECTION --- 
+################################
+Production:
+  extends: .deploy_COCKPIT
+
+Staging:
+  extends: .deploy_COCKPIT_STAGING

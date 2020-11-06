@@ -1,0 +1,6 @@
+node_modules
+dist
+stdout.log
+stderr.log
+.git
+mount/data.db

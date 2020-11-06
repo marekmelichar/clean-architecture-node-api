@@ -1,0 +1,16 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "test/*",
+    "dist/*",
+    "stdout.log",
+    "stderr.log",
+    "export/*",
+    "coverage/*"
+  ],
+  "watch": "src",
+  "ext": "ts",
+  "verbose": false
+}

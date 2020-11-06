@@ -1,0 +1,12 @@
+node_modules
+export
+dist
+coverage
+.env
+.env.test
+.idea
+.nyc_output
+*.log
+*.code-workspace
+mount/data.db
+docs
