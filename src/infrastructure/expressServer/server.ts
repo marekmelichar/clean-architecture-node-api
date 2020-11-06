@@ -15,7 +15,6 @@ export class ExpressServer {
 
   // constructor(router: express.Router, sessionOptions: session.SessionOptions) {
   constructor(router: express.Router) {
-    console.log('Router constructor');
     
     // this.session = session(sessionOptions);
     this.express = express();
@@ -39,10 +38,6 @@ export class ExpressServer {
     // this.express.use(this.session);
     // this.express.use(setHeaders.getMiddleware());
     // this.express.use(cors(setHeaders.getCorsOptions()));
-    this.express.get('/v1/', (req, res) => {
-      console.log('/')
-      res.send({ hello: 'World' })
-    });
     this.express.use(router);
     // this.express.use(errorHandler);
     // this.http = http.createServer(this.express);

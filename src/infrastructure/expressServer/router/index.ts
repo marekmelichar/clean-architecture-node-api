@@ -5,6 +5,6 @@ import { IExpressControllers } from '../../container/boundary';
 
 export const router = (controllers: IExpressControllers) => {
   return Router()
-    .get('/v1/customers', customersRouter(controllers))
+    .use('/v1/customers', customersRouter(controllers))
     .use('/api-docs', apiDocsRouter);
 };
