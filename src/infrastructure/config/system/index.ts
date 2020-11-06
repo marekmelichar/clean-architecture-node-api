@@ -22,18 +22,6 @@ const systemConfig = {
       stderrPath: process.env.LOGGER_PATH_STDERR || 'stderr.log',
     },
   },
-  // metrics: {
-  //   http: {
-  //     in: true,
-  //     out: true,
-  //   },
-  //   database: {
-  //     in: false,
-  //     out: false,
-  //   },
-  //   prefix: `${name}_`.replace(new RegExp('-', 'g'), '_'),
-  //   timeout: 5000,
-  // },
 };
 
 const appBanner = `${systemConfig.appName}/${systemConfig.version}`;
