@@ -1,50 +1,12 @@
 import {
-  // StatusController,
-  // GetCollectionController,
-  // PostEventController,
-  // TrainConnectionsController,
-  // GPSMqttHandler,
-  // TotalPassengerCountMqttHandler,
-  // PassengerCountMqttHandler,
-  // BrightnessHandler,
-  // JobsController,
-  GetAllCustomersController,
-  CreateCustomerController,
-  EditCustomerController,
-  DeleteCustomerController,
+  CustomersController
 } from './controller';
 
 import {
-  // IStatusController,
-  // IGetCollectionController,
-  // IPostEventController,
-  // ITrainConnectionsController,
-  // IMqttHandler,
-  // IJobsController,
-  IGetAllCustomersController,
-  ICreateCustomerController,
-  IEditCustomerController,
-  IDeleteCustomerController,
+  ICustomersController
 } from './boundary';
 
 export {
-  // IStatusController,
-  // StatusController,
-  // IGetCollectionController,
-  // GetCollectionController,
-  // PostEventController,
-  // IPostEventController,
-  // TrainConnectionsController,
-  // ITrainConnectionsController,
-  // IMqttHandler,
-  // GPSMqttHandler,
-  // TotalPassengerCountMqttHandler,
-  // PassengerCountMqttHandler,
-  // BrightnessHandler,
-  // IJobsController,
-  // JobsController,
-  IGetAllCustomersController,
-  ICreateCustomerController,
-  IEditCustomerController,
-  IDeleteCustomerController,
+  CustomersController,
+  ICustomersController,
 };

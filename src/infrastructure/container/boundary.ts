@@ -4,6 +4,7 @@ import {
   // IPostEventController,
   // ITrainConnectionsController,
   // IJobsController,
+  ICustomersController
 } from '../../delivery';
 
 export interface IControllers {
@@ -15,8 +16,9 @@ export interface IExpressControllers {
   // getCollection: IGetCollectionController;
   // postEvent: IPostEventController;
   // connections: ITrainConnectionsController;
-  getAllCustomers: IGetAllCustomersController;
-  createCustomer: ICreateCustomerController;
-  editCustomer: IEditCustomerController;
-  deleteCustomer: IDeleteCustomerController;
+  // getAllCustomers: IGetAllCustomersController;
+  // createCustomer: ICreateCustomerController;
+  // editCustomer: IEditCustomerController;
+  // deleteCustomer: IDeleteCustomerController;
+  customers: ICustomersController
 }

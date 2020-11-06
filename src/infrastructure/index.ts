@@ -1,5 +1,7 @@
+import { config } from './config';
+import { controllers } from './container';
 import { ExpressServer, router } from './expressServer';
 
 export {
-  ExpressServer, router
+  config, controllers, ExpressServer, router
 }

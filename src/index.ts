@@ -1,38 +1,38 @@
 import 'source-map-support/register';
 import {
-  logger,
-  controllers,
-  config,
   ExpressServer,
   router,
-  dbMigration,
-  redisConnection,
-  schema,
+  controllers,
+  config,
+  // dbMigration,
+  // redisConnection,
+  // schema,
 } from './infrastructure';
 // import { SocketServer } from './infrastructure/socketServer';
-import { runAllJobs } from './infrastructure/container/jobs';
-import { ApolloGraphqlServer } from './infrastructure/apolloServer';
+// import { runAllJobs } from './infrastructure/container/jobs';
+// import { ApolloGraphqlServer } from './infrastructure/apolloServer';
 
-process.on('unhandledRejection', (reason) => {
-  logger.error(reason, 'UnhandledRejection error caught');
-});
-process.on('uncaughtException', (error) => {
-  logger.error(error, 'UncaughtException error caught');
-  process.nextTick(() => {
-    process.exit(1);
-  });
-});
+// process.on('unhandledRejection', (reason) => {
+//   logger.error(reason, 'UnhandledRejection error caught');
+// });
+// process.on('uncaughtException', (error) => {
+//   logger.error(error, 'UncaughtException error caught');
+//   process.nextTick(() => {
+//     process.exit(1);
+//   });
+// });
 
 const initializationSequence = async () => {
-  await dbMigration.up();
-  await runAllJobs();
+  // await dbMigration.up();
+  // await runAllJobs();
 
   const expressServer = new ExpressServer(
     router(controllers.express),
-    redisConnection.getSessionOptions(),
+    // redisConnection.getSessionOptions(),
   );
   expressServer.listen(config.port, () => {
-    logger.info(`server running on port: ${config.port}`);
+    // logger.info(`server running on port: ${config.port}`);
+    console.log(`server running on port: ${config.port}`)
   });
 
   // new SocketServer(

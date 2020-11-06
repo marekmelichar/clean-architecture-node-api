@@ -2,22 +2,23 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 // @ts-ignore
 import * as queryParser from 'express-query-int';
-import * as session from 'express-session';
+// import * as session from 'express-session';
 import * as formDataParser from 'express-form-data';
 import * as http from 'http';
-import * as cors from 'cors';
-import { errorHandler, streamRequest, setHeaders, prometheusMonitoring } from '../container';
+// import * as cors from 'cors';
+// import { errorHandler, streamRequest, setHeaders, prometheusMonitoring } from '../container';
 
 export class ExpressServer {
   private express: express.Application;
   private http: http.Server;
-  private session: express.RequestHandler;
+  // private session: express.RequestHandler;
 
-  constructor(router: express.Router, sessionOptions: session.SessionOptions) {
-    this.session = session(sessionOptions);
+  // constructor(router: express.Router, sessionOptions: session.SessionOptions) {
+  constructor(router: express.Router) {
+    // this.session = session(sessionOptions);
     this.express = express();
 
-    this.express.use(streamRequest);
+    // this.express.use(streamRequest);
     this.express.use(
       bodyParser.urlencoded({
         extended: true,
@@ -31,13 +32,13 @@ export class ExpressServer {
     );
     this.express.use(formDataParser.stream());
     this.express.use(queryParser());
-    this.express.use(this.session);
-    this.express.use(setHeaders.getMiddleware());
-    this.express.use(cors(setHeaders.getCorsOptions()));
+    // this.express.use(this.session);
+    // this.express.use(setHeaders.getMiddleware());
+    // this.express.use(cors(setHeaders.getCorsOptions()));
     this.express.use(router);
-    this.express.use(errorHandler);
+    // this.express.use(errorHandler);
     this.http = http.createServer(this.express);
-    this.express.use(prometheusMonitoring);
+    // this.express.use(prometheusMonitoring);
   }
 
   public listen = (port: number, callback: Function) => {
@@ -49,7 +50,7 @@ export class ExpressServer {
   }
 
   public getSession = () => {
-    return this.session;
+    // return this.session;
   }
 
   public getApp = () => {
