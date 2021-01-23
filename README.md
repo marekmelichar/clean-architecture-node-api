@@ -1,4 +1,6 @@
-# cockpit-api
+# hairdressers-web-api
+### trying to use clean architecture and solid principles
+### final app is possible to be run in Docker container
 
 ## About
 
@@ -12,7 +14,7 @@ Install modules from package
 yarn install
 ```
 
-You also will probably need to install nodemon globally for development.
+You will probably need to install nodemon globally for development.
 
 ## How to run
 
